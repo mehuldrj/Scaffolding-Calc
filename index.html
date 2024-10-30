@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaffolding Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./service-worker.js")
+            .then((registration) => {
+              console.log("Service Worker registered with scope:", registration.scope);
+            })
+            .catch((error) => {
+              console.error("Service Worker registration failed:", error);
+            });
+        }
+      </script>
+           
+</head>
+<body>
+    <div class="container">
+        <h1>Scaffolding Calculator</h1>
+
+        <div class="input-section">
+            <label for="scaffoldingVolume">Scaffolding Volume (Cubic Meter):</label>
+            <input type="number" id="scaffoldingVolume" placeholder="Enter cubic meters" required>
+            <label for="workingHours">Working Hours per Day:</label>
+            <select id="workingHours">
+                <option value="8">8 Hours</option>
+                <option value="12">12 Hours</option>
+                <option value="24">24 Hours</option>
+            </select>
+            <button onclick="calculate()">Calculate Material</button>
+        </div>
+
+        <div class="results-section">
+            <div class="table-container">
+                <h2>Material Requirements</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material Detail</th>
+                            <th>SAP Code</th>
+                            <th>Required Items</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materialTable"></tbody>
+                </table>
+            </div>
+
+            <div class="calc-container">
+                <h2>Duration & Manpower Calculations</h2>
+                <label for="totalDays">Total Duration (in Days):</label>
+                <input type="number" id="totalDays" oninput="calculateFromDays()" placeholder="Enter Days">
+                <label for="totalGangs">Total Gangs Required:</label>
+                <input type="number" id="totalGangs" oninput="calculateFromGangs()" placeholder="Enter Gangs">
+                <label for="totalMandays">Total Mandays Required:</label>
+                <input type="text" id="totalMandays" readonly>
+                
+                <div class="notes-section">
+                    <h3>Notes:</h3>
+                    <ul>
+                        <li>Material calculation is based on BMP on Pre-Turnaround Management (M-CM-ENM-ENM-3-BPS-T-038).</li>
+                        <li>Assumptions in Duration/Gang calculations:
+                            <ul>
+                                <li>One gang is 5 scaffolders.</li>
+                                <li>Duration includes erection & removal, with productivities of 4.5 & 6.5 CUM/scaffolder/hr respectively.</li>
+                                <li>Mandays = Total Days × Scaffolders.</li>
+                            </ul>
+                        </li>
+                        <li>Feedback or suggestions are welcomed on: <a href="mailto:mehul.darji@ril.com">mehul.darji@ril.com</a>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>

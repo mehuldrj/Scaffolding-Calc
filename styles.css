@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+.input-section, .results-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-section label, .calc-container label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.input-section input[type="number"],
+.input-section select {
+    width: 50%; /* Set width to 50% or adjust as desired */
+    max-width: 170px; /* Optional: Set a max-width to limit the width on larger screens */
+    margin: 0 auto; /* Center-align the fields */
+    display: block; /* Center alignment requires block display */
+    margin-top: 10px; /* Adds space above tables */
+    margin-bottom: 10px; /* Adds space above tables */
+    padding: 12px 8px; /* Adjusts the vertical (12px) and horizontal (8px) padding */
+    font-size: 1em; /* Optional: Adjust font size if needed for better readability */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+.results-section {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.table-container, .calc-container {
+    flex: 1;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-container th, .table-container td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-container th {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+.calc-container input[type="number"], #totalMandays {
+    width: calc(50% - 20px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.notes-section {
+    text-align: left;
+    font-size: 0.9em; /* Smaller font size for notes */
+    margin-top: 10px;
+    padding-top: 50px;
+    border-top: 1px solid #ddd;
+}
+
+.notes-section h3 {
+    color: #4A90E2;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.notes-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notes-section ul li {
+    background: #eaf6ff;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 5px;
+}
+
+.notes-section ul li ul {
+    list-style: disc;
+    margin-left: 20px;
+}
